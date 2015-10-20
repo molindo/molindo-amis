@@ -2,7 +2,9 @@
     "variables": {
         "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
         "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
-        "source_ami": "{{env `SOURCE_AMI`}}"
+        "source_ami": "{{env `SOURCE_AMI`}}",
+        "vpc_id": "{{env `VPC_ID`}}",
+        "subnet_id": "{{env `SUBNET_ID`}}"
     },
     "builders": [
         {
@@ -10,6 +12,8 @@
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "region": "us-east-1",
+            "vpc_id": "{{user `vpc_id`}}",
+            "subnet_id": "{{user `subnet_id`}}",
             "source_ami": "{{user `source_ami`}}",
             "instance_type": "t2.large",
             "ssh_username": "ubuntu",
