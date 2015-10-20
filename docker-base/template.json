@@ -21,7 +21,6 @@
       "ami_groups": "all",
       "ami_regions": [
         "us-west-1",
-        "us-east-1",
         "eu-west-1",
         "eu-central-1"
       ],
