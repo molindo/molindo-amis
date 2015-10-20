@@ -25,10 +25,13 @@ ExecStart=
 ExecStart=/usr/bin/docker daemon \$DOCKER_OPTS
 SYSTEMD
 
-systemctl daemon-reload
-
 # add all users from sudo group to docker group
 for user in `grep sudo /etc/group | cut -d: -f4 | sed -e 's/,/ /g'`; do
     echo "adding $user to docker group"
     usermod -aG docker $user
 done
+
+systemctl daemon-reload
+systemctl restart docker.service
+
+docker version
