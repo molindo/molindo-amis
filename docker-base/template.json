@@ -4,7 +4,7 @@
     "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
     "vpc_id": "{{env `VPC_ID`}}",
     "subnet_id": "{{env `SUBNET_ID`}}",
-    "source_ami": "ami-a7c490c2"
+    "source_ami": "ami-1c552a76"
   },
   "builders": [
     {
@@ -25,7 +25,7 @@
         "eu-central-1"
       ],
       "tags": {
-        "Release": "vivid",
+        "Release": "wily",
         "Build": "{{timestamp}}"
       }
     }
