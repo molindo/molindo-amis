@@ -5,8 +5,8 @@ export DEBIAN_FRONTEND=noninteractive
 source /etc/lsb-release
 
 # add molindo ppa
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DAFCF825D62EB07F
-echo deb http://ppa.launchpad.net/molindo/ppa/ubuntu ${DISTRIB_CODENAME} main > /etc/apt/sources.list.d/molindo-ppa-${DISTRIB_CODENAME}.list
+#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DAFCF825D62EB07F
+#echo deb http://ppa.launchpad.net/molindo/ppa/ubuntu ${DISTRIB_CODENAME} main > /etc/apt/sources.list.d/molindo-ppa-${DISTRIB_CODENAME}.list
 
 # add docker source
 apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
