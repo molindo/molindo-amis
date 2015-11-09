@@ -15,10 +15,13 @@ echo deb https://apt.dockerproject.org/repo ubuntu-${DISTRIB_CODENAME} main > /e
 apt-get update
 
 # install utilities
-apt-get install -y curl jshon ntp wget python-pip unattended-upgrades
+apt-get install -y curl jshon ntp wget python-pip python-setuptools unattended-upgrades
 
 # install awscli
 pip install --upgrade awscli
+
+# install cfn-* tools
+easy_install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz
 
 # install docker
 apt-get install -y linux-image-extra-virtual linux-image-extra-$(uname -r)
