@@ -17,7 +17,8 @@
       "source_ami": "{{user `source_ami`}}",
       "instance_type": "t2.large",
       "ssh_username": "ubuntu",
-      "ami_name": "docker-base-{{timestamp}}",
+      "ami_name": "molindo-docker-base-{{timestamp}}",
+      "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-base",
       "ami_groups": "all",
       "ami_regions": [
         "us-west-2",
