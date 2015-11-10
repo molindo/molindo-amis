@@ -59,3 +59,38 @@ systemctl daemon-reload
 systemctl restart docker.service
 
 docker version
+
+# script to update ec2 profile
+cat > /usr/local/bin/update-ec2-env.sh <<'EC2ENV'
+#!/bin/bash
+
+region=$(ec2metadata --availability-zone | sed -e "s/.$//")
+instance=$(ec2metadata --instance-id)
+
+cat > /etc/profile.d/01-ec2-env.sh <<ENV
+# this file is auto-generated, don't edit!
+
+# globals
+export EC2_REGION=$region
+export EC2_INSTANCE_ID=$instance
+
+# aws cli
+export AWS_DEFAULT_REGION=$region
+
+ENV
+EC2ENV
+chmod +x /usr/local/bin/update-ec2-env.sh
+
+# systemd unit to update ec2 profile on startup
+cat > /etc/systemd/system/ec2-env.service <<'SYSTEMD'
+[Unit]
+Description=Update EC2 profile (/etc/profile.d/01-ec2-env.sh)
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/update-ec2-env.sh
+
+[Install]
+WantedBy=multi-user.target
+SYSTEMD
+systemctl enable ec2-env.service
