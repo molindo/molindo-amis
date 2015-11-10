@@ -81,6 +81,9 @@ ENV
 EC2ENV
 chmod +x /usr/local/bin/update-ec2-env.sh
 
+# profile placeholder
+echo '# ec2-env not updated yet!' > /etc/profile.d/01-ec2-env.sh
+
 # systemd unit to update ec2 profile on startup
 cat > /etc/systemd/system/ec2-env.service <<'SYSTEMD'
 [Unit]
@@ -94,3 +97,12 @@ ExecStart=/usr/local/bin/update-ec2-env.sh
 WantedBy=multi-user.target
 SYSTEMD
 systemctl enable ec2-env.service
+
+cat > /usr/local/bin/ec2-tag.sh <<'EC2TAG'
+#!/bin/bash
+
+. /etc/profile.d/01-ec2-env.sh
+
+aws ec2 describe-tags --filters Name=resource-id,Values=$EC2_INSTANCE_ID Name=key,Values=${1-Name} --query 'Tags[0].Value' --output text
+EC2TAG
+chmod +x /usr/local/bin/ec2-tag.sh
