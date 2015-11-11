@@ -1,6 +1,7 @@
 # molindo-ecs-base
 
-AMI built on top of the [Amazon ECS AMI](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html)
+AMI built on top of the [Amazon ECS AMI](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html) for
+use in an autoscaling ECS instance cluster.
 
 - built from [Amazon ECS AMI](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html)
 - available as `molindo-ecs-base-{{timestamp}}`
