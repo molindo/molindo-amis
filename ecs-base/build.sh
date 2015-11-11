@@ -14,6 +14,7 @@ if [ `echo $version | cut -d. -f1` -le 1 -a `echo $version | cut -d. -f2` -le 8 
     mv $exec $exec-dist
     mv /tmp/docker $exec
 fi
+/etc/init.d/docker restart
 docker version
 
 cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
