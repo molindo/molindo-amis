@@ -57,10 +57,12 @@ end script
 UPSTART
 
 cat > /usr/local/bin/ec2-tag.sh <<'EC2TAG'
-#!/bin/bash
+#!/bin/bash -e
+
+: ${1:?"Usage: $0 TAG"}
 
 . /etc/profile.d/01-ec2-env.sh
 
-aws ec2 describe-tags --filters Name=resource-id,Values=$EC2_INSTANCE_ID Name=key,Values=${1-Name} --query 'Tags[0].Value' --output text
+aws ec2 describe-tags --filters Name=resource-id,Values=$EC2_INSTANCE_ID Name=key,Values=${1} --query 'Tags[0].Value' --output text
 EC2TAG
 chmod +x /usr/local/bin/ec2-tag.sh
