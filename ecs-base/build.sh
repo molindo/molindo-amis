@@ -17,9 +17,10 @@ fi
 /etc/init.d/docker restart
 docker version
 
-cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
-ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
-ECS_CONFIG
+# uncomment once amazon-ecs-agent allows awslogs driver (#251)
+#cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
+#ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
+#ECS_CONFIG
 
 # script to update ec2 profile
 cat > /usr/local/bin/update-ec2-env.sh <<'EC2ENV'
