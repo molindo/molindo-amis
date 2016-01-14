@@ -2,21 +2,6 @@
 
 yum install -y curl aws-cli
 
-# replace docker TODO make version check dynamic
-docker version
-version="1.7.1"
-newVersion="1.9.0"
-if [ `echo $version | cut -d. -f1` -le 1 -a `echo $version | cut -d. -f2` -le 8 ]; then
-    curl "https://get.docker.com/builds/Linux/x86_64/docker-$newVersion" > /tmp/docker
-    chmod +x /tmp/docker
-    echo "replacing docker $version with $newVersion"
-    exec=`which docker`
-    mv $exec $exec-dist
-    mv /tmp/docker $exec
-fi
-/etc/init.d/docker restart
-docker version
-
 # uncomment once amazon-ecs-agent allows awslogs driver (#251)
 #cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
 #ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
