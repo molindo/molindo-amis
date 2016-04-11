@@ -3,7 +3,7 @@
 yum install -y curl aws-cli aws-cfn-bootstrap
 
 stop ecs
-/etc/init.docker stop
+/etc/init.d/docker stop
 
 # uncomment once amazon-ecs-agent allows awslogs driver (#251)
 #cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
