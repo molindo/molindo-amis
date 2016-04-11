@@ -1,6 +1,8 @@
 #!/bin/bash -e
 
-yum install -y curl aws-cli
+yum update -y
+
+yum install -y curl aws-cli aws-cfn-bootstrap
 
 # uncomment once amazon-ecs-agent allows awslogs driver (#251)
 #cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
@@ -16,6 +18,9 @@ instance=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 
 cat > /etc/profile.d/01-ec2-env.sh <<ENV
 # this file is auto-generated, don't edit!
+
+# path
+export PATH="/opt/aws/bin:$PATH"
 
 # globals
 export EC2_REGION=$region
