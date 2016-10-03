@@ -5,10 +5,9 @@ yum install -y curl aws-cli aws-cfn-bootstrap
 stop ecs
 /etc/init.d/docker stop
 
-# uncomment once amazon-ecs-agent allows awslogs driver (#251)
-#cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
-#ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
-#ECS_CONFIG
+cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
+ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
+ECS_CONFIG
 
 # script to update ec2 profile
 cat > /usr/local/bin/update-ec2-env.sh <<'EC2ENV'
