@@ -4,7 +4,7 @@
     "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
     "vpc_id": "{{env `VPC_ID`}}",
     "subnet_id": "{{env `SUBNET_ID`}}",
-    "source_ami": "ami-3d55272a"
+    "source_ami": "ami-a58760b3"
   },
   "builders": [
     {
