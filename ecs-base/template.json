@@ -4,7 +4,7 @@
     "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
     "vpc_id": "{{env `VPC_ID`}}",
     "subnet_id": "{{env `SUBNET_ID`}}",
-    "source_ami": "ami-a58760b3"
+    "source_ami": "ami-b2df2ca4"
   },
   "builders": [
     {
@@ -14,6 +14,7 @@
       "region": "us-east-1",
       "vpc_id": "{{user `vpc_id`}}",
       "subnet_id": "{{user `subnet_id`}}",
+      "associate_public_ip_address": "true",
       "source_ami": "{{user `source_ami`}}",
       "instance_type": "t2.large",
       "ssh_username": "ec2-user",
