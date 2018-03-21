@@ -1,3 +1,2 @@
 - available as `molindo-docker-base-{{timestamp}}`
-- available in `us-east-1`, `us-west-2`, `eu-west-1`, `eu-central-1`
-- built using [Atlas](https://atlas.hashicorp.com/molindo/build-configurations/docker-base)
+- available in `us-east-1`, `eu-west-1`, `eu-central-1`

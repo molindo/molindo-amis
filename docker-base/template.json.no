@@ -4,7 +4,7 @@
         "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-cb17d8b6"
+        "source_ami": "ami-d61027ad"
     },
     "builders": [
         {
@@ -17,16 +17,17 @@
             "associate_public_ip_address": "true",
             "source_ami": "{{user `source_ami`}}",
             "instance_type": "m5.large",
-            "ssh_username": "ec2-user",
+            "ssh_username": "ubuntu",
             "ssh_pty" : "true",
-            "ami_name": "molindo-ecs-base-{{timestamp}}",
-            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-ecs",
+            "ami_name": "molindo-docker-base-{{timestamp}}",
+            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-base",
             "ami_groups": "all",
             "ami_regions": [
                 "eu-west-1",
                 "eu-central-1"
             ],
             "tags": {
+                "Release": "wily",
                 "Build": "{{timestamp}}"
             }
         }

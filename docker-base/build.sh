@@ -66,6 +66,7 @@ cat > /usr/local/bin/update-ec2-env.sh <<'EC2ENV'
 
 region=$(ec2metadata --availability-zone | sed -e "s/.$//")
 instance=$(ec2metadata --instance-id)
+vpc=$( curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/`cat /sys/class/net/eth0/address`/vpc-id )
 
 cat > /etc/profile.d/01-ec2-env.sh <<ENV
 # this file is auto-generated, don't edit!
@@ -73,6 +74,7 @@ cat > /etc/profile.d/01-ec2-env.sh <<ENV
 # globals
 export EC2_REGION=$region
 export EC2_INSTANCE_ID=$instance
+export EC2_VPC_ID=$vpc
 
 # aws cli
 export AWS_DEFAULT_REGION=$region
@@ -105,6 +107,16 @@ cat > /usr/local/bin/ec2-tag.sh <<'EC2TAG'
 
 . /etc/profile.d/01-ec2-env.sh
 
-aws ec2 describe-tags --filters Name=resource-id,Values=$EC2_INSTANCE_ID Name=key,Values=${1} --query 'Tags[0].Value' --output text
+aws ec2 describe-tags --filters Name=resource-id,Values=$EC2_INSTANCE_ID Name=key,Values=${1} --query 'Tags[].Value' --output text
 EC2TAG
 chmod +x /usr/local/bin/ec2-tag.sh
+
+cat > /usr/local/bin/ec2-instances.sh <<'EC2INSTANCES'
+#!/bin/bash -e
+
+. /etc/profile.d/01-ec2-env.sh
+
+aws ec2 describe-instances --filters Name=vpc-id,Values=$EC2_VPC_ID Name=instance-state-name,Values=running --output table \
+  --query "sort_by(Reservations[].Instances[].{InstanceId: InstanceId, Ip: PrivateIpAddress, Group: Tags[?Key == 'aws:autoscaling:groupName'].Value | [0], Zone: Placement.AvailabilityZone, Type: InstanceType}, &Group)"
+EC2INSTANCES
+chmod +x /usr/local/bin/ec2-instances.sh
