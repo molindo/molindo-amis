@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-yum install -y curl aws-cli aws-cfn-bootstrap
+yum install -y curl aws-cli aws-cfn-bootstrap amazon-efs-utils
 
-stop ecs
+#/sbin/status ecs && /sbin/stop ecs
 /etc/init.d/docker stop
 
 cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
@@ -69,3 +69,22 @@ aws ec2 describe-instances --filters Name=vpc-id,Values=$EC2_VPC_ID Name=instanc
   --query "sort_by(Reservations[].Instances[].{InstanceId: InstanceId, Ip: PrivateIpAddress, Group: Tags[?Key == 'aws:autoscaling:groupName'].Value | [0], Zone: Placement.AvailabilityZone, Type: InstanceType}, &Group)"
 EC2INSTANCES
 chmod +x /usr/local/bin/ec2-instances.sh
+
+cat > /usr/local/bin/efs-fstab.sh <<'EFSFSTAB'
+#!/bin/bash -e
+
+function usage() {
+    echo "$1 not set"
+    echo "usage: $0 efs dir"
+}
+
+efs=${1?`usage efs`}
+dir=${2?`usage dir`}
+
+fstab="${efs}:/ ${dir} efs tls,_netdev"
+
+mkdir -p ${dir}
+grep --silent "$fstab" /etc/fstab || echo "$fstab" >> /etc/fstab
+
+EFSFSTAB
+chmod +x /usr/local/bin/efs-fstab.sh
