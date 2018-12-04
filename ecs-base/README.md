@@ -30,10 +30,17 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 * docker `18.06.1-ce`
 * ecs-init `1.22.0-1`
 
+#### Changelog
+
+* Added `/usr/local/bin/ephemeral-fstab.sh`
+* Added `/usr/local/bin/elb-fstab.sh`
+* Install `vim`
+* Install `nvme-cli`
+
 #### Regions
 
 | Region       | AMI ID                  |
 |--------------|-------------------------|
-| eu-central-1 | `ami-0de8fb88bd730b5f2` |
-| eu-west-1    | `ami-06ce051cc55a7a3ac` |
-| us-east-1    | `ami-0edfe2efb13d5fc6b` |
+| eu-central-1 | `ami-029d811f1a7469947` |
+| eu-west-1    | `ami-0b43f031c445d3e14` |
+| us-east-1    | `ami-050db184d95ffd566` |
