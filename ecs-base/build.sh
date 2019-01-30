@@ -94,7 +94,7 @@ done
 EPHFSTAB
 chmod +x /usr/local/bin/ephemeral-fstab.sh
 
-cat > /usr/local/bin/elb-fstab.sh <<'ELBFSTAB'
+cat > /usr/local/bin/ebs-fstab.sh <<'EBSFSTAB'
 #!/bin/bash -e
 
 function usage() {
@@ -112,8 +112,8 @@ nvme=`readlink -f ${dev}`
 mkdir -p ${dir}
 grep --silent "$nvme" /etc/fstab || echo "${nvme} ${dir} ${fs} ${opts}" >> /etc/fstab
 
-ELBFSTAB
-chmod +x /usr/local/bin/elb-fstab.sh
+EBSFSTAB
+chmod +x /usr/local/bin/ebs-fstab.sh
 
 cat > /usr/local/bin/efs-fstab.sh <<'EFSFSTAB'
 #!/bin/bash -e

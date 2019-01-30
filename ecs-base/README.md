@@ -45,11 +45,29 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-west-1    | `ami-0b43f031c445d3e14` |
 | us-east-1    | `ami-050db184d95ffd566` |
 
-### Source `ami-0e4ccc6bc8b6243c4`
+### Source `ami-0eaa3baf6969912ba`
 
-* ecs container agent `1.25.0`
+* ecs container agent `1.22.0`
 * docker `18.06.1-ce`
-* ecs-init `1.25.0-1`
+* ecs-init `1.22.0-1`
+
+#### Changelog
+
+* Renamed `elb-fstab.sh` to `ebs-fstab.sh`
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-0030e8230c5a95ae0` |
+| eu-west-1    | `ami-0c171d224d2d43d4a` |
+| us-east-1    | `ami-072497f3066266909` |
+
+### Source `ami-08b3fd22c78a217d5`
+
+* ecs container agent `1.25.1`
+* docker `18.06.1-ce`
+* ecs-init `1.25.1-1`
 
 #### Changelog
 
@@ -59,6 +77,6 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 
 | Region       | AMI ID                  |
 |--------------|-------------------------|
-| eu-central-1 | `ami-058fb96636b5db307` |
-| eu-west-1    | `ami-0b453299810d88e8c` |
-| us-east-1    | `ami-04aded2f12d86499c` |
+| eu-central-1 | `ami-0efd9342a1952d210` |
+| eu-west-1    | `ami-05a2873e19b63f646` |
+| us-east-1    | `ami-007dc926c8b925ab4` |
