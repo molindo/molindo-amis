@@ -80,3 +80,21 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-0efd9342a1952d210` |
 | eu-west-1    | `ami-05a2873e19b63f646` |
 | us-east-1    | `ami-007dc926c8b925ab4` |
+
+### Source `ami-07ba9ca2923346c0c`
+
+* ecs container agent `1.25.3`
+* docker `18.06.1-ce`
+* ecs-init `1.25.3-1`
+
+#### Changelog
+
+* Source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-08c6b04be15dfe01c` |
+| eu-west-1    | `ami-0e1e6a04752d129d2` |
+| us-east-1    | `ami-01400df578bc54180` |
