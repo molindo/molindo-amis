@@ -10,59 +10,6 @@ use in an autoscaling ECS instance cluster.
 
 Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html).
 
-### Source `ami-0b9fee3a2d0596ed1`
-
-* ecs container agent `1.21.0`
-* docker `18.06.1-ce`
-* ecs-init `1.21.0-1`
-
-#### Regions
-
-| Region       | AMI ID                  |
-|--------------|-------------------------|
-| eu-central-1 | `ami-0054bc15950bb571a` |
-| eu-west-1    | `ami-00398a7eede1b4999` |
-| us-east-1    | `ami-070765cfbb0b56739` |
-
-### Source `ami-0eaa3baf6969912ba`
-
-* ecs container agent `1.22.0`
-* docker `18.06.1-ce`
-* ecs-init `1.22.0-1`
-
-#### Changelog
-
-* Added `/usr/local/bin/ephemeral-fstab.sh`
-* Added `/usr/local/bin/elb-fstab.sh`
-* Install `vim`
-* Install `nvme-cli`
-
-#### Regions
-
-| Region       | AMI ID                  |
-|--------------|-------------------------|
-| eu-central-1 | `ami-029d811f1a7469947` |
-| eu-west-1    | `ami-0b43f031c445d3e14` |
-| us-east-1    | `ami-050db184d95ffd566` |
-
-### Source `ami-0eaa3baf6969912ba`
-
-* ecs container agent `1.22.0`
-* docker `18.06.1-ce`
-* ecs-init `1.22.0-1`
-
-#### Changelog
-
-* Renamed `elb-fstab.sh` to `ebs-fstab.sh`
-
-#### Regions
-
-| Region       | AMI ID                  |
-|--------------|-------------------------|
-| eu-central-1 | `ami-0030e8230c5a95ae0` |
-| eu-west-1    | `ami-0c171d224d2d43d4a` |
-| us-east-1    | `ami-072497f3066266909` |
-
 ### Source `ami-08b3fd22c78a217d5`
 
 * ecs container agent `1.25.1`
@@ -98,3 +45,21 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-08c6b04be15dfe01c` |
 | eu-west-1    | `ami-0e1e6a04752d129d2` |
 | us-east-1    | `ami-01400df578bc54180` |
+
+### Source `ami-042ae7188819e7e9b`
+
+* ecs container agent `1.26.0`
+* docker `18.06.1-ce`
+* ecs-init `1.26.0-1`
+
+#### Changelog
+
+* Source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-0e0f8bda08cb8cc8c` |
+| eu-west-1    | `ami-09aa5aa8daa677776` |
+| us-east-1    | `ami-03de1edcb8077f39d` |
