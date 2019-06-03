@@ -63,3 +63,21 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-0e0f8bda08cb8cc8c` |
 | eu-west-1    | `ami-09aa5aa8daa677776` |
 | us-east-1    | `ami-03de1edcb8077f39d` |
+
+### Source `ami-06a20f16dd2f50741`
+
+* ecs container agent `1.28.0`
+* docker `18.06.1-ce`
+* ecs-init `1.28.0-1`
+
+#### Changelog
+
+* Increased Docker volume size to 50G
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-0e4672d7c55f574ad` |
+| eu-west-1    | `ami-0949ddf030c0f8604` |
+| us-east-1    | `ami-013f94853e6738d25` |

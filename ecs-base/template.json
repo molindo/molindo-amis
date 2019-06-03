@@ -4,7 +4,7 @@
         "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-042ae7188819e7e9b"
+        "source_ami": "ami-06a20f16dd2f50741"
     },
     "builders": [
         {
@@ -25,6 +25,14 @@
             "ami_regions": [
                 "eu-west-1",
                 "us-east-1"
+            ],
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/xvdcz",
+                    "volume_type": "gp2",
+                    "volume_size": 50,
+                    "delete_on_termination": true
+                }
             ],
             "tags": {
                 "Build": "{{timestamp}}"
