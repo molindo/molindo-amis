@@ -7,6 +7,7 @@ yum install -y curl aws-cli aws-cfn-bootstrap amazon-efs-utils nvme-cli vim
 
 cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
 ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
+ECS_ENABLE_CONTAINER_METADATA=true
 ECS_CONFIG
 
 # script to update ec2 profile
