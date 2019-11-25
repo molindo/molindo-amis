@@ -82,7 +82,7 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-west-1    | `ami-0949ddf030c0f8604` |
 | us-east-1    | `ami-013f94853e6738d25` |
 
-### Source ``
+### Source `ami-0bceb1887b6b37130`
 
 * ecs container agent `1.29.1`
 * docker `18.06.1-ce`
@@ -99,3 +99,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-0d02c4b0e57fb1ac8` |
 | eu-west-1    | `ami-0963062c0015da611` |
 | us-east-1    | `ami-09b4bb44d27992b13` |
+
+### Source `ami-0d3da340bcd9173b1`
+
+* ECS-Optimized Amazon Linux `2018.03.20191114`
+* ecs container agent `1.33.0`
+* docker `18.06.1-ce`
+* ecs-init `1.33.0-1`
+
+#### Changelog
+
+* Enable `ECS_ENABLE_SPOT_INSTANCE_DRAINING`
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-076b4feec1c9d9866` |
+| eu-west-1    | `ami-0021537c8d39d78dd` |
+| us-east-1    | `ami-0aa686abcc170fd47` |
