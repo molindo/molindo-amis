@@ -118,3 +118,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-076b4feec1c9d9866` |
 | eu-west-1    | `ami-0021537c8d39d78dd` |
 | us-east-1    | `ami-0aa686abcc170fd47` |
+
+### Source `ami-07facec38b7d326d7`
+
+* ECS-Optimized Amazon Linux `2018.03.20191114`
+* ecs container agent `1.36.1`
+* docker `18.09.9-ce`
+* ecs-init `1.36.1-1`
+
+#### Changelog
+
+* Source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-04db43902aea26465` |
+| eu-west-1    | `ami-0c51d901eac41429a` |
+| us-east-1    | `ami-0ed0b4d6f92f39162` |
