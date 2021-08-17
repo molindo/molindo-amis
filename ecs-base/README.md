@@ -1,10 +1,60 @@
 # molindo-ecs-base
 
+**The Amazon ECS-optimized Amazon Linux AMI is deprecated as of April 15, 2021. After that date, Amazon ECS will continue providing critical and important security updates for the AMI but will not add support for new features.**
+
 AMI built on top of the [Amazon ECS AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html) for
 use in an autoscaling ECS instance cluster.
 
 - available as `molindo-ecs-base-{{timestamp}}`
 - available in `us-east-1`, `eu-west-1`, `eu-central-1`
+
+### Variables
+
+variables are set in `/etc/profile.d/01-ec2-env.sh` and written by `update-ec2-env.sh` during startup.
+
+* `EC2_REGION`
+* `EC2_INSTANCE_ID`
+* `EC2_VPC_ID`
+* `AWS_DEFAULT_REGION` (for aws-cli)
+
+### Scripts
+
+* `ec2-instances.sh` - get a list of EC2 instances in this TIM environment
+* `ec2-tag.sh` - get an instance tag value
+* `ephemeral-fstab.sh` - write an `/etc/fstab` entry for an ephemeral volume
+* `ebs-fstab.sh` - write an `/etc/fstab` entry for an EBS volume
+* `efs-fstab.sh` - write an `/etc/fstab` entry for an EFS volume
+
+### Configuration
+
+Configuration can be done by running commands [using EC2 user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+and [molindo-tim-infrastructure includes](http://cfm.molindo-build.net/), e.g.
+
+```
+Content-Type: multipart/mixed; boundary=MULTIPART
+MIME-Version: 1.0
+
+--MULTIPART
+Content-Type: text/cloud-config
+
+bootcmd:
+ - [ /usr/bin/cloud-init-per, once, ephemeral_fstab, /usr/local/bin/ephemeral-fstab.sh, /mnt/ephemeral, ext4 ]
+
+mounts:
+ - [ swap, null ]
+
+swap:
+   filename: /swap.img
+   size: auto
+   maxsize: 8G
+
+--MULTIPART
+Content-Type: text/x-include-url
+
+http://cfm.molindo-build.net/ecs-agent
+
+--MULTIPART--
+```
 
 ## AMIs
 
@@ -194,3 +244,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com
 | eu-central-1 | `ami-0fd620d590fb4f331` |
 | eu-west-1    | `ami-01bc830606f381d62` |
 | us-east-1    | `ami-09249eb1caf96628a` |
+
+### Source `ami-050fd85feecf20f61`
+
+* ECS-Optimized Amazon Linux `2018.03.20210723`
+* ecs container agent `1.51.0`
+* docker `19.03.13-ce`
+* ecs-init `1.51.0-1`
+
+#### Changelog
+
+* Source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-09f4bccbf33a7b36c` |
+| eu-west-1    | `ami-0178ed83b5b4f4563` |
+| us-east-1    | `ami-07c7078ab1cf6732a` |
