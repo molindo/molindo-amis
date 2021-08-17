@@ -1,7 +1,5 @@
 {
     "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
         "source_ami": "ami-04e4ffaf92ae1dabf"
@@ -9,8 +7,6 @@
     "builders": [
         {
             "type": "amazon-ebs",
-            "access_key": "{{user `aws_access_key`}}",
-            "secret_key": "{{user `aws_secret_key`}}",
             "region": "eu-central-1",
             "vpc_id": "{{user `vpc_id`}}",
             "subnet_id": "{{user `subnet_id`}}",
