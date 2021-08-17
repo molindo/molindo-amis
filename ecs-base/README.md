@@ -2,8 +2,8 @@
 
 **The Amazon ECS-optimized Amazon Linux AMI is deprecated as of April 15, 2021. After that date, Amazon ECS will continue providing critical and important security updates for the AMI but will not add support for new features.**
 
-AMI built on top of the [Amazon ECS AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html) for
-use in an autoscaling ECS instance cluster.
+AMI built on top of the [Amazon Linux ECS AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html)
+for use in an autoscaling ECS instance cluster.
 
 - available as `molindo-ecs-base-{{timestamp}}`
 - available in `us-east-1`, `eu-west-1`, `eu-central-1`
@@ -58,7 +58,7 @@ http://cfm.molindo-build.net/ecs-agent
 
 ## AMIs
 
-Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html).
+Based on the [Amazon ECS-Optimized Amazon Linux AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html#ecs-ami-versions-linux).
 
 ### Source `ami-08b3fd22c78a217d5`
 

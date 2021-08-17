@@ -16,7 +16,7 @@
             "ssh_username": "ec2-user",
             "ssh_pty" : "true",
             "ami_name": "molindo-ecs-base-{{timestamp}}",
-            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-ecs",
+            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/ecs-base",
             "ami_groups": "all",
             "ami_regions": [
                 "eu-west-1",
