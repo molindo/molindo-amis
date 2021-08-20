@@ -1,16 +1,12 @@
 {
     "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-04e4ffaf92ae1dabf"
+        "source_ami": "ami-050fd85feecf20f61"
     },
     "builders": [
         {
             "type": "amazon-ebs",
-            "access_key": "{{user `aws_access_key`}}",
-            "secret_key": "{{user `aws_secret_key`}}",
             "region": "eu-central-1",
             "vpc_id": "{{user `vpc_id`}}",
             "subnet_id": "{{user `subnet_id`}}",
@@ -20,7 +16,7 @@
             "ssh_username": "ec2-user",
             "ssh_pty" : "true",
             "ami_name": "molindo-ecs-base-{{timestamp}}",
-            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-ecs",
+            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/ecs-base",
             "ami_groups": "all",
             "ami_regions": [
                 "eu-west-1",

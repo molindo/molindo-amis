@@ -1,33 +1,36 @@
 {
     "variables": {
-        "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
-        "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-d61027ad"
+        "source_ami": "ami-0102ef3da1a6c47ca"
     },
     "builders": [
         {
             "type": "amazon-ebs",
-            "access_key": "{{user `aws_access_key`}}",
-            "secret_key": "{{user `aws_secret_key`}}",
-            "region": "us-east-1",
+            "region": "eu-central-1",
             "vpc_id": "{{user `vpc_id`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "associate_public_ip_address": "true",
             "source_ami": "{{user `source_ami`}}",
             "instance_type": "m5.large",
-            "ssh_username": "ubuntu",
+            "ssh_username": "ec2-user",
             "ssh_pty" : "true",
-            "ami_name": "molindo-docker-base-{{timestamp}}",
-            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/docker-base",
+            "ami_name": "molindo-ecs2-base-{{timestamp}}",
+            "ami_description": "https://github.com/molindo/molindo-amis/tree/master/ecs2-base",
             "ami_groups": "all",
             "ami_regions": [
                 "eu-west-1",
-                "eu-central-1"
+                "us-east-1"
+            ],
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/xvdcz",
+                    "volume_type": "gp2",
+                    "volume_size": 50,
+                    "delete_on_termination": true
+                }
             ],
             "tags": {
-                "Release": "wily",
                 "Build": "{{timestamp}}"
             }
         }

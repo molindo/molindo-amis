@@ -1,2 +1,0 @@
-- available as `molindo-docker-base-{{timestamp}}`
-- available in `us-east-1`, `eu-west-1`, `eu-central-1`
