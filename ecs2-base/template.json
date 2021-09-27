@@ -2,7 +2,7 @@
     "variables": {
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-0102ef3da1a6c47ca"
+        "source_ami": "ami-02662254373ce730d"
     },
     "builders": [
         {
