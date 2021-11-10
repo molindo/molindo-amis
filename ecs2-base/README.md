@@ -68,7 +68,7 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-west-1    | `ami-036d733508d23cd99` |
 | us-east-1    | `ami-02a1cc4424093e4e7` |
 
-### Source `ami-`
+### Source `ami-02662254373ce730d`
 
 * ECS-Optimized Amazon Linux 2 `20210922`
 * ecs container agent `1.55.3`
@@ -86,3 +86,23 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-000bc5d83e5cad991` |
 | eu-west-1    | `ami-075a110c7a53e3874` |
 | us-east-1    | `ami-00628bf20fe9a459d` |
+
+### Source `ami-088d915ff2a776984`
+
+* ECS-Optimized Amazon Linux 2 `20210922`
+* ecs container agent `1.57.0`
+* docker `20.10.7`
+* ecs-init `1.57.0-1`
+
+#### Changelog
+
+* source
+* removed obsolete `/dev/xvdcz` mapping
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-0f7bb136202d3e5d8` |
+| eu-west-1    | `ami-0f9921735f59eb90d` |
+| us-east-1    | `ami-08af1b713938709cc` |
