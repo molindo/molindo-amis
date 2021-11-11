@@ -2,7 +2,7 @@
     "variables": {
         "vpc_id": "{{env `VPC_ID`}}",
         "subnet_id": "{{env `SUBNET_ID`}}",
-        "source_ami": "ami-02662254373ce730d"
+        "source_ami": "ami-088d915ff2a776984"
     },
     "builders": [
         {
@@ -21,14 +21,6 @@
             "ami_regions": [
                 "eu-west-1",
                 "us-east-1"
-            ],
-            "launch_block_device_mappings": [
-                {
-                    "device_name": "/dev/xvdcz",
-                    "volume_type": "gp2",
-                    "volume_size": 50,
-                    "delete_on_termination": true
-                }
             ],
             "tags": {
                 "Build": "{{timestamp}}"
