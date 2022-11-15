@@ -112,7 +112,7 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 * ECS-Optimized Amazon Linux 2 `20220421`
 * ecs container agent `1.61.0`
 * docker `20.10.7`
-* ecs-init `latest`
+* ecs-init `1.61.0-1`
 
 #### Changelog
 
@@ -131,7 +131,7 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 * ECS-Optimized Amazon Linux 2 `20220520`
 * ecs container agent `1.61.1`
 * docker `20.10.13`
-* ecs-init `latest`
+* ecs-init `1.61.1-1`
 
 #### Changelog
 
@@ -144,3 +144,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-0516d526feea6929d` |
 | eu-west-1    | `ami-095c4c8cb9ccea87f` |
 | us-east-1    | `ami-0c182eea632269105` |
+
+### Source `ami-08f4df18aa6f249eb`
+
+* ECS-Optimized Amazon Linux 2 `20221102`
+* ecs container agent `1.65.1`
+* docker `20.10.17`
+* ecs-init `1.65.1-1`
+
+#### Changelog
+
+* source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-088ea0535b1e597ac` |
+| eu-west-1    | `ami-08bce6d43c97f7595` |
+| us-east-1    | `ami-0ce552fda2727e89f` |
