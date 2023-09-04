@@ -47,7 +47,8 @@ Note that `cloud-init` will run as part of `systemd` startup and therefore runni
 
 ## AMIs
 
-Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html#ecs-ami-versions-linux).
+Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html#ecs-ami-versions-linux)
+([Changelog](https://github.com/aws/amazon-ecs-ami/blob/main/CHANGELOG.md)).
 
 ### Source `ami-0102ef3da1a6c47ca`
 
@@ -163,3 +164,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-088ea0535b1e597ac` |
 | eu-west-1    | `ami-08bce6d43c97f7595` |
 | us-east-1    | `ami-0ce552fda2727e89f` |
+
+### Source `ami-0b5009e7f102539b1`
+
+* ECS-Optimized Amazon Linux 2 `20230809`
+* ecs container agent `1.75.0`
+* docker `20.10.23`
+* ecs `1.75.0-1`
+
+#### Changelog
+
+* source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-08fa252ac682a4b52` |
+| eu-west-1    | `ami-02590f7e2a5f8360e` |
+| us-east-1    | `ami-01176f6ee32645c9c` |
