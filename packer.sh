@@ -79,7 +79,7 @@ for t in */*template.json; do
                     -v ~/.aws/credentials:/.credentials \
                     -v "$PWD/`dirname $t`:/template" \
                     -w /template \
-                    hashicorp/packer:light build `basename $t`
+                    hashicorp/packer:light-1.9.5 build `basename $t`
                 break
                 ;;
             [Nn])

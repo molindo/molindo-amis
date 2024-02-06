@@ -183,3 +183,21 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-08fa252ac682a4b52` |
 | eu-west-1    | `ami-02590f7e2a5f8360e` |
 | us-east-1    | `ami-01176f6ee32645c9c` |
+
+### Source `ami-0b19e4398ca560e6a`
+
+* ECS-Optimized Amazon Linux 2 `2.0.20240131`
+* ECS container agent `1.80.0`
+* Docker version `20.10.25`
+
+#### Changelog
+
+* source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-04e25aa8fbf710697` |
+| eu-west-1    | `ami-073ef4077d915f599` |
+| us-east-1    | `ami-07f791fe289394528` |
