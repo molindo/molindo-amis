@@ -219,3 +219,22 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-0564213f92c3b7bf1` |
 | eu-west-1    | `ami-0d2dbefb827e69e44` |
 | us-east-1    | `ami-044a580ca2659bb48` |
+
+### Source `ami-0e8f75996f31a3dde`
+
+* ECS-Optimized Amazon Linux 2 `2.0.20240515`
+* ECS container agent `1.82.4`
+* Docker version 20.10.25
+
+#### Changelog
+
+* install and enable `amazon-cloudwatch-agent`
+* disable `amazon-ssm-agent`
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-07efeb064b98fac4b` |
+| eu-west-1    | `ami-03bc32b566665a28f` |
+| us-east-1    | `ami-077d629e7cd9790fe` |

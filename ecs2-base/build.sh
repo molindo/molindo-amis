@@ -1,6 +1,14 @@
 #!/bin/bash -e
 
-yum install -y curl aws-cli aws-cfn-bootstrap amazon-efs-utils nvme-cli vim bash-completion
+yum install -y curl aws-cli aws-cfn-bootstrap amazon-cloudwatch-agent amazon-efs-utils nvme-cli vim bash-completion
+
+# enable amazon-cloudwatch-agent, exits gracefully if no config in
+# a) /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+# b) /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d
+systemctl enable amazon-cloudwatch-agent.service
+
+# ssm is currently unused and might interfere with amazon-cloudwatch-agent configuration on startup
+systemctl disable amazon-ssm-agent.service
 
 cat >> /etc/ecs/ecs.config <<'ECS_CONFIG'
 ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","syslog","awslogs"]
