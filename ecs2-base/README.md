@@ -256,3 +256,21 @@ Based on the [Amazon ECS-Optimized Amazon Linux 2 AMI](https://docs.aws.amazon.c
 | eu-central-1 | `ami-088f36b43fd1c06f2` |
 | eu-west-1    | `ami-077999dd1390ea338` |
 | us-east-1    | `ami-0fe1a2b1ab24179f1` |
+
+### Source `ami-008a78a56d9b1b413`
+
+* ECS-Optimized Amazon Linux 2 `2.0.20241017`
+* ECS container agent `1.87.1`
+* Docker version 25.0.6
+
+#### Changelog
+
+* source only
+
+#### Regions
+
+| Region       | AMI ID                  |
+|--------------|-------------------------|
+| eu-central-1 | `ami-0b90130bc8ef39145` |
+| eu-west-1    | `ami-0ca02b4edad074cc1` |
+| us-east-1    | `ami-0badeb888be196be9` |
